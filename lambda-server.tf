@@ -68,7 +68,17 @@ module "server_function" {
       resources = [
         module.isr_revalidation_sqs.queue_arn
       ]
-    }
+    },
+    dynamodb = {
+      effect = "Allow",
+      actions = [
+        "dynamodb:GetItem",
+        "dynamodb:Query"
+      ]
+      resources = [
+        "${module.isr_revalidation_dynamodb.dynamodb_table_arn}/*"
+      ]
+    },
   }
 
   attach_cloudwatch_logs_policy     = true
@@ -80,5 +90,6 @@ module "server_function" {
     CACHE_BUCKET_REGION         = var.aws_region
     REINVALIDATION_QUEUE_REGION = var.aws_region
     REINVALIDATION_QUEUE_URL    = module.isr_revalidation_sqs.queue_url
+    CACHE_DYNAMO_TABLE          = module.isr_revalidation_dynamodb.dynamodb_table_id
   }
 }

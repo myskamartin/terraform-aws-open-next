@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '**/*.tf'
+      - '.github/workflows/release.yml'
 
 jobs:
   release:

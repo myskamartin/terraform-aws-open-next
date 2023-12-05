@@ -33,7 +33,7 @@ module "isr_revalidation_dynamodb" {
 
   global_secondary_indexes = [
     {
-      name            = "GSI1"
+      name            = "revalidate"
       hash_key        = "path"
       range_key       = "revalidatedAt"
       projection_type = "ALL"

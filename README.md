@@ -1,15 +1,19 @@
 # Terraform AWS OpenNext
 
-> This is still work in progress
+> Work in progress. Currently, it does not offer many configuration options
 
-Terraform module to deploy Next.js app build with [open-next](https://open-next.js.org/) to AWS. Module is using existing public modules to make the configuration and maintenance easier.
+> Works only in us-east-1 region
+
+Terraform module to deploy Next.js app build with [open-next](https://open-next.js.org/) to AWS. The module uses existing public modules to simplify configuration and maintenance.
+
+---
 
 ## Features
 
 - [x] S3 origin
 - [x] Upload asset files
 - [x] Upload cache files
-- [x] Hashed and unhased files have proper `cache_control` set
+- [x] Hashed and unhashed files have proper `cache_control` set
 - [x] DynamoDB with populated Revalidation table
 - [x] Image optimization function
 - [x] Server function
@@ -18,28 +22,23 @@ Terraform module to deploy Next.js app build with [open-next](https://open-next.
 - [x] S3 Redirection from apex to www domain
 - [ ] Use CloudFront default domain
 - [ ] Fix Warmer function
-- [ ] Running at edge
+- [ ] Running at the edge
 - [ ] AWS WAF configuration with logging
 - [ ] CloudFront distribution logging
-
-## Prerequisites
-
-1. Directory with [NextJS](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) app builded with [OpenNext](https://open-next.js.org/get_started).
-
-2. Domain in Route53
 
 ## Usage
 
 ```hcl
 module "open_next" {
-  source = "git::https://github.com/myskamartin/terraform-aws-open-next.git?ref=main"
+  source = "myskamartin/open-next/aws"
 
   project_domain      = "example.com"
 }
 ```
 
-> If you do not place Terraform module configuration to root directory, change the `build_dir` accordingly based on your needs.
+This module does not create a route53 hosted zone. Make sure that the hosted zone exists before deploying resources to AWS.
 
+---
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -151,3 +150,7 @@ module "open_next" {
 | <a name="output_aws_region"></a> [aws\_region](#output\_aws\_region) | AWS region in which the infrastructure is deployed for the current environment |
 | <a name="output_project_environment"></a> [project\_environment](#output\_project\_environment) | Project environment |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## License
+
+[MIT](LICENSE) Licensed.
