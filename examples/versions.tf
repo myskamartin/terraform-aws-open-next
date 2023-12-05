@@ -17,17 +17,5 @@ terraform {
       source  = "hashicorp/local"
       version = "2.4.0"
     }
-    # In case you want to use S3 as a backend.
-    # This is optional.
-    # Resources need to be created prior before moving forward with deployment.
-    # For example configuration please check https://github.com/cloudposse/terraform-aws-tfstate-backend and follow the insttruction.
-    #    backend "s3" {
-    #      bucket         = ""
-    #      key            = ""
-    #      region         = ""
-    #      profile        = ""
-    #      dynamodb_table = ""
-    #      encrypt        = true/false
-    #    }
   }
 }

@@ -1,5 +1,5 @@
 data "local_file" "dynamodb_cache" {
-  filename = "../.open-next/dynamodb-provider/dynamodb-cache.json"
+  filename = "${var.build_dir}/dynamodb-provider/dynamodb-cache.json"
 }
 
 resource "random_string" "prefix" {
