@@ -9,7 +9,7 @@ module "image_optimization_function" {
   lambda_at_edge = false
   snap_start     = false
 
-  function_name              = "${local.project_id_full}-image-optimization-function"
+  function_name              = "${local.project_id_full}-image-optimize-function"
   description                = "${var.project_name} Image Optimization function"
   handler                    = var.lambda_image_optimization_function_handler
   runtime                    = var.lambda_image_optimization_function_runtime
