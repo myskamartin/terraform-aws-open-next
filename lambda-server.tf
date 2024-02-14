@@ -9,7 +9,7 @@ module "server_function" {
   lambda_at_edge = false
   snap_start     = false
 
-  function_name              = "${local.project_id_full}-server-function"
+  function_name              = "${local.project_id_full}-server-fn"
   description                = "${var.project_name} Server function"
   handler                    = var.lambda_server_function_handler
   runtime                    = var.lambda_server_function_runtime

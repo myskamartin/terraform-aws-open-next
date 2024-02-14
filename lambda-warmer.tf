@@ -9,7 +9,7 @@ module "warmer_function" {
   lambda_at_edge = false
   snap_start     = false
 
-  function_name              = "${local.project_id_full}-warmer-function"
+  function_name              = "${local.project_id_full}-warmer-fn"
   description                = "${var.project_name} Warmer function"
   handler                    = var.lambda_warmer_function_handler
   runtime                    = var.lambda_warmer_function_runtime

@@ -9,7 +9,7 @@ module "isr_revalidation_function" {
   lambda_at_edge = false
   snap_start     = false
 
-  function_name              = "${local.project_id_full}-isr-revalidation-function"
+  function_name              = "${local.project_id_full}-isr-revalidation-fn"
   description                = "${var.project_name} ISR Revalidation function"
   handler                    = var.lambda_isr_revalidation_function_handler
   runtime                    = var.lambda_isr_revalidation_function_runtime
