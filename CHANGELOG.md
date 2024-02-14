@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.3](https://github.com/myskamartin/terraform-aws-open-next/compare/v1.0.2...v1.0.3) (2024-02-14)
+
+
+### Bug Fixes
+
+* lambda function name reduction ([27dce9c](https://github.com/myskamartin/terraform-aws-open-next/commit/27dce9ca4f3a1667e0acf23e50a2a93cd4015b19))
+
 ### [1.0.2](https://github.com/myskamartin/terraform-aws-open-next/compare/v1.0.1...v1.0.2) (2024-02-14)
 
 
