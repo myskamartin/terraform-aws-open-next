@@ -284,3 +284,22 @@ resource "aws_route53_record" "aaaa_alias" {
     evaluate_target_health = true
   }
 }
+
+#############################
+### Cache invalidation
+#############################
+
+resource "null_resource" "cdn_invalidate_cache" {
+  triggers = {
+    distribution_id   = module.cdn.cloudfront_distribution_id
+    distribution_etag = module.cdn.cloudfront_distribution_etag
+    combined_source_hash = join("", flatten([
+      values(aws_s3_object.unhashed_assets)[*].source_hash,
+      values(aws_s3_object.hashed_assets)[*].source_hash,
+      values(aws_s3_object.cache)[*].source_hash
+  ])) }
+
+  provisioner "local-exec" {
+    command = "aws cloudfront create-invalidation --distribution-id ${self.triggers.distribution_id} --paths '/*' --query 'Invalidation.Id' | xargs -I{} aws cloudfront wait invalidation-completed --distribution-id ${self.triggers.distribution_id} --id {}"
+  }
+}
