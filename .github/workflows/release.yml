@@ -5,14 +5,15 @@ on:
   push:
     branches:
       - master
-    paths:
-      - '**/*.tf'
-      - '.github/workflows/release.yml'
+        #    paths:
+        #      - '**/*.tf'
+        #      - '.github/workflows/release.yml'
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'myskamartin'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
