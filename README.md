@@ -49,6 +49,7 @@ This module does not create a route53 hosted zone. Make sure that the hosted zon
 | <a name="requirement_archive"></a> [archive](#requirement\_archive) | ~> 2.4.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.21.0 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | 2.4.0 |
+| <a name="requirement_null"></a> [null](#requirement\_null) | 3.2.2 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.5.0 |
 
 ## Providers
@@ -57,6 +58,7 @@ This module does not create a route53 hosted zone. Make sure that the hosted zon
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.21.0 |
 | <a name="provider_local"></a> [local](#provider\_local) | 2.4.0 |
+| <a name="provider_null"></a> [null](#provider\_null) | 3.2.2 |
 | <a name="provider_random"></a> [random](#provider\_random) | ~> 3.5.0 |
 
 ## Modules
@@ -96,6 +98,7 @@ This module does not create a route53 hosted zone. Make sure that the hosted zon
 | [aws_s3_object.cache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
 | [aws_s3_object.hashed_assets](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
 | [aws_s3_object.unhashed_assets](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
+| [null_resource.cdn_invalidate_cache](https://registry.terraform.io/providers/hashicorp/null/3.2.2/docs/resources/resource) | resource |
 | [random_string.prefix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [aws_cloudfront_cache_policy.caching_optimized](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/cloudfront_cache_policy) | data source |
 | [aws_cloudfront_origin_request_policy.all_viewer_except_host_header](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/cloudfront_origin_request_policy) | data source |
