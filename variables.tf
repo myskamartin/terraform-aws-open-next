@@ -244,3 +244,9 @@ variable "cloudfront_distribution_price_class" {
   description = "CloudFront distribution price class"
   default     = "PriceClass_100"
 }
+
+variable "cloudfront_distribution_web_acl_id" {
+  type        = string
+  description = "CloudFront distribution web ACL ID"
+  default     = null
+}

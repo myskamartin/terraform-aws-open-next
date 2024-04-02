@@ -68,6 +68,7 @@ module "cdn" {
   price_class         = var.cloudfront_distribution_price_class
   retain_on_delete    = false
   wait_for_deployment = true
+  web_acl_id          = var.cloudfront_distribution_web_acl_id
 
   create_origin_access_identity = false
   create_origin_access_control  = true
