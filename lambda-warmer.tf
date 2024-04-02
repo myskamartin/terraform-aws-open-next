@@ -74,7 +74,6 @@ resource "aws_cloudwatch_event_rule" "warmer" {
   name                = "${local.project_id_full}-warmer"
   description         = ""
   schedule_expression = "rate(5 minutes)"
-  state               = "ENABLED"
 }
 
 resource "aws_cloudwatch_event_target" "warmer" {

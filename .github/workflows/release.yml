@@ -1,3 +1,4 @@
+---
 name: Release
 
 on:
@@ -5,10 +6,9 @@ on:
   push:
     branches:
       - master
-      - main
-        #    paths:
-        #      - '**/*.tf'
-        #      - '.github/workflows/release.yml'
+    paths:
+      - '**/*.tf'
+      - '.github/workflows/release.yml'
 
 jobs:
   release:
